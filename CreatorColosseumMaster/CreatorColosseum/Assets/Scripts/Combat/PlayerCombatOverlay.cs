@@ -72,11 +72,11 @@ public class PlayerCombatOverlay : MonoBehaviour {
         //print (_player.GetComponent<CombatScript> ().maxExp + " Max Exp");
         calculatorHealth = _player.GetComponent<CombatScript>().health / _player.GetComponent<CombatScript>().maxHealth;
         calculatorStamina = _player.GetComponent<PlayerMovement>().stamina / _player.GetComponent<PlayerMovement>().maxStamina;
-        calculatorExp = _player.GetComponent<ExpSystemPlayer>().exp / _player.GetComponent<ExpSystemPlayer>().maxExp;
+        //calculatorExp = _player.GetComponent<ExpSystemPlayer>().exp / _player.GetComponent<ExpSystemPlayer>().maxExp;
 
         SetHealth(calculatorHealth);
         SetStamina(calculatorStamina);
-        SetExp(calculatorExp);
+        //SetExp(calculatorExp);
 
         //print (calculatorExp + " Calc. EXP");
         //print (calculatorHealth + " Calc. Health");
@@ -101,14 +101,14 @@ public class PlayerCombatOverlay : MonoBehaviour {
         placeHolder = _player.GetComponent<PlayerMovement>().maxStamina;
         staminaMax = placeHolder.ToString();
 
-        placeHolder = _player.GetComponent<ExpSystemPlayer>().exp;
-        expCurrent = placeHolder.ToString();
+       // placeHolder = _player.GetComponent<ExpSystemPlayer>().exp;
+       // expCurrent = placeHolder.ToString();
 
-        placeHolder = _player.GetComponent<ExpSystemPlayer>().maxExp;
-        expMax = placeHolder.ToString();
+        //placeHolder = _player.GetComponent<ExpSystemPlayer>().maxExp;
+       // expMax = placeHolder.ToString();
 
-        placeHolder = _player.GetComponent<ExpSystemPlayer>().playerLevel;
-        playerLevel = placeHolder.ToString();
+       // placeHolder = _player.GetComponent<ExpSystemPlayer>().playerLevel;
+       // playerLevel = placeHolder.ToString();
 
         //-----------------Print the Health and Mana--------
         healthTextbox.text = healthCurrent + " /  " + healthMax;
@@ -116,9 +116,9 @@ public class PlayerCombatOverlay : MonoBehaviour {
 
         //-----------------Print the EXP and Current Level-------
 
-        expCurrentTextbox.text = expCurrent + " / ";
-        expMaxTextbox.text = expMax;
-        playerLevelTextbox.text = "Level: " + playerLevel;
+        //expCurrentTextbox.text = expCurrent + " / ";
+        //expMaxTextbox.text = expMax;
+        //playerLevelTextbox.text = "Level: " + playerLevel;
 
     }
     //-------------Setting the Look of the Health Bar------------------
@@ -135,11 +135,11 @@ public class PlayerCombatOverlay : MonoBehaviour {
         //manaBar.color = Color.Lerp(startColorMana, endColor, calculatorMana);
     }
     //-------------Setting the Look of the Exp Bar------------------
-    public void SetExp(float myExp)
-    {
-        expBar.transform.localScale = new Vector3(myExp, expBar.transform.localScale.y, expBar.transform.localScale.z);
+   // public void SetExp(float myExp)
+    //{
+      //  expBar.transform.localScale = new Vector3(myExp, expBar.transform.localScale.y, expBar.transform.localScale.z);
         //expBar.color = Color.Lerp(endColor, startColorExp, calculatorExp);
-    }
+   // }
     public void SetDrain(float myDrain)
     {
         healthDrain.transform.localScale = new Vector3(myDrain, healthDrain.transform.localScale.y, healthDrain.transform.localScale.z);
