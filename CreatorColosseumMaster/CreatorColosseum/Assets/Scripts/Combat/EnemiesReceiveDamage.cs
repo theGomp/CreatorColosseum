@@ -31,7 +31,7 @@ public class EnemiesReceiveDamage : MonoBehaviour {
     public GameObject burningChild;
 
     public bool dead = false;
-    bool nowDead = true;
+    public bool nowDead = true;
 
 
     //** SOUNDS **
@@ -115,6 +115,7 @@ public class EnemiesReceiveDamage : MonoBehaviour {
         {
             dead = true;
             nowDead = false;
+            gameObject.SetActive(false);
             //Destroy(gameObject);
         }
 
